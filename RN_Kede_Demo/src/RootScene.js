@@ -130,31 +130,33 @@ TabBarNavigator.navigationOptions = ({navigation}) => {
 	let headerRight = null;
 	switch (routeName) {
 		case 'Home':{
-			headerTitle=(
-				<TouchableOpacity style={styles.searchBar} onPress={() => navigation.push('Search')}>
-					<Image
-						source={require('../resource/home/nav_search.png')}
-						style={styles.searchIcon}
-					/>
-					<Text style={{color:'#c0c0c0'}}>请输入搜索内容</Text>
-				</TouchableOpacity>
-			);
-			headerLeft=(
-				<TouchableOpacity onPress={() => navigation.push('Category')}>
-					<Image
-						source={require('../resource/home/nav_classify_char.png')}
-						style={{width:20,height:33.5,marginLeft:15}}
-					/>
-				</TouchableOpacity>
-			);
-			headerRight=(
-				<TouchableOpacity onPress={() => alert('联系客服')}>
-					<Image
-						source={require('../resource/home/nav_message_char.png')}
-						style={{width:20,height:30,marginRight:15}}
-					/>
-				</TouchableOpacity>
-			);
+			// headerTitle=(
+			// 	<TouchableOpacity style={styles.searchBar} onPress={() => navigation.push('Search')}>
+			// 		<Image
+			// 			source={require('../resource/home/nav_search.png')}
+			// 			style={styles.searchIcon}
+			// 		/>
+			// 		<Text style={{color:'#c0c0c0'}}>请输入搜索内容</Text>
+			// 	</TouchableOpacity>
+			// );
+			// headerLeft=(
+			// 	<TouchableOpacity onPress={() => navigation.push('Category')}>
+			// 		<Image
+			// 			source={require('../resource/home/nav_classify_char.png')}
+			// 			style={{width:20,height:33.5,marginLeft:15}}
+			// 		/>
+			// 	</TouchableOpacity>
+			// );
+			// headerRight=(
+			// 	<TouchableOpacity onPress={() => alert('联系客服')}>
+			// 		<Image
+			// 			source={require('../resource/home/nav_message_char.png')}
+			// 			style={{width:20,height:30,marginRight:15}}
+			// 		/>
+			// 	</TouchableOpacity>
+			// );
+
+            headerTitle=TabbarComponent.TopSeacrchView(Constant.Title_Bar_bouth,navigation);
 
 			break;
 		}
@@ -163,7 +165,7 @@ TabBarNavigator.navigationOptions = ({navigation}) => {
 			break;
 		}
 		case 'Category':{
-			headerTitle=TabbarComponent.TopSeacrchView(Constant.Tittle_Bar_Search_only);
+			headerTitle=TabbarComponent.TopSeacrchView(Constant.Tittle_Bar_Search_only,navigation);
 			break;
 		}
 		case 'Cart':{
