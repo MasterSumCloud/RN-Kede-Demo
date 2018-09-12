@@ -13,6 +13,8 @@ import CartScreen from "./cart/CartScreen";
 import MineScreen from "./mine/MineScreen";
 import SearchScreen from "./search/SearchScreen";
 import CategoryScreen from "./category/CategoryScreen";
+import * as Constant from "./utils/Constant";
+let TabbarComponent = require('./component/TabbarComponent');
 
 
 const TabBarNavigator = createBottomTabNavigator(
@@ -30,7 +32,7 @@ const TabBarNavigator = createBottomTabNavigator(
 
 			}
 		},
-		Discovery: {
+        Duwu: {
 			screen: DuwuScreen,
 			navigationOptions: {
 				tabBarLabel: '毒物',
@@ -42,7 +44,7 @@ const TabBarNavigator = createBottomTabNavigator(
 				)
 			}
 		},
-		Health: {
+        Category: {
 			screen: CategoryScreen,
 			navigationOptions: {
 				tabBarLabel: '分类',
@@ -161,7 +163,7 @@ TabBarNavigator.navigationOptions = ({navigation}) => {
 			break;
 		}
 		case 'Category':{
-			headerTitle='分类';
+			headerTitle=TabbarComponent.TopSeacrchView(Constant.Tittle_Bar_Search_only);
 			break;
 		}
 		case 'Cart':{

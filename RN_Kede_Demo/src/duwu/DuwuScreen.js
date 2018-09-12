@@ -7,7 +7,7 @@ class DiscoveryScreen extends Component {
 	render(){
 		return(
 			<View style={styles.container}>
-				<Text style={styles.text}>Discovery Screen</Text>
+				<Text style={styles.text}>Duwu Screen</Text>
 			</View>
 		)
 	}
