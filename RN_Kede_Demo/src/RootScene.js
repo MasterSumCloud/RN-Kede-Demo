@@ -8,10 +8,9 @@ import {
 } from 'react-native';
 import {createBottomTabNavigator, createStackNavigator} from 'react-navigation';
 import HomeScreen from "./home/HomeScreen";
-import DiscoveryScreen from "./discovery/DiscoveryScreen";
+import DuwuScreen from "./duwu/DuwuScreen";
 import CartScreen from "./cart/CartScreen";
 import MineScreen from "./mine/MineScreen";
-import HealthScreen from "./health/HealthScreen";
 import SearchScreen from "./search/SearchScreen";
 import CategoryScreen from "./category/CategoryScreen";
 
@@ -24,7 +23,7 @@ const TabBarNavigator = createBottomTabNavigator(
 				tabBarLabel: '首页',
 				tabBarIcon: ({focused, tintColor}) => (
 					<Image
-						source={focused ? require('../resource/tab/tab_home_selected.png') : require('../resource/tab/tab_home_default.png')}
+						source={focused ? require('../resource/tab/tab_home_on.png') : require('../resource/tab/tab_home_off.png')}
 						style={styles.tabBarItem}
 					/>
 				)
@@ -32,24 +31,24 @@ const TabBarNavigator = createBottomTabNavigator(
 			}
 		},
 		Discovery: {
-			screen: DiscoveryScreen,
+			screen: DuwuScreen,
 			navigationOptions: {
-				tabBarLabel: '发现',
+				tabBarLabel: '毒物',
 				tabBarIcon: ({focused, tintColor}) => (
 					<Image
-						source={focused ? require('../resource/tab/tab_discovery_selected.png') : require('../resource/tab/tab_discovery_default.png')}
+						source={focused ? require('../resource/tab/tab_duwu_on.png') : require('../resource/tab/tab_duwu_off.png')}
 						style={styles.tabBarItem}
 					/>
 				)
 			}
 		},
 		Health: {
-			screen: HealthScreen,
+			screen: CategoryScreen,
 			navigationOptions: {
-				tabBarLabel: '健康',
+				tabBarLabel: '分类',
 				tabBarIcon: ({focused, tintColor}) => (
 					<Image
-						source={focused ? require('../resource/tab/tab_health_selected.png') : require('../resource/tab/tab_health_default.png')}
+						source={focused ? require('../resource/tab/tab_category_on.png') : require('../resource/tab/tab_category_off.png')}
 						style={styles.tabBarItem}
 					/>
 				)
@@ -61,7 +60,7 @@ const TabBarNavigator = createBottomTabNavigator(
 				tabBarLabel: '购物车',
 				tabBarIcon: ({focused, tintColor}) => (
 					<Image
-						source={focused ? require('../resource/tab/tab_car_selected.png') : require('../resource/tab/tab_car_default.png')}
+						source={focused ? require('../resource/tab/tab_cart_on.png') : require('../resource/tab/tab_cart_off.png')}
 						style={styles.tabBarItem}
 					/>
 				)
@@ -73,7 +72,7 @@ const TabBarNavigator = createBottomTabNavigator(
 				tabBarLabel: '我的',
 				tabBarIcon: ({focused, tintColor}) => (
 					<Image
-						source={focused ? require('../resource/tab/tab_mine_selected.png') : require('../resource/tab/tab_mine_default.png')}
+						source={focused ? require('../resource/tab/tab_mine_on.png') : require('../resource/tab/tab_mine_off.png')}
 						style={styles.tabBarItem}
 					/>
 				)
@@ -81,7 +80,7 @@ const TabBarNavigator = createBottomTabNavigator(
 		}
 	}, {
 		tabBarOptions: {
-			activeTintColor: '#ff3366',
+			activeTintColor: '#8EC31E',
 			style: {
 				backgroundColor: 'white'
 			}
@@ -157,12 +156,12 @@ TabBarNavigator.navigationOptions = ({navigation}) => {
 
 			break;
 		}
-		case 'Discovery':{
-			headerTitle='发现';
+		case 'Duwu':{
+			headerTitle='毒物';
 			break;
 		}
-		case 'Health':{
-			headerTitle='健康';
+		case 'Category':{
+			headerTitle='分类';
 			break;
 		}
 		case 'Cart':{
